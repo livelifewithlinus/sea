@@ -17,6 +17,7 @@ import { ConfigurableDigitsControls, ConfigurableBuyButton } from './configurabl
 import { TradeTypeChips } from '@/components/custom/trade-type-chips';
 import { SymbolSelector } from '@/components/custom/symbol-selector';
 import { ThemeToggle } from '@/components/custom/theme-toggle';
+import { AIAnalysisPanel } from '@/components/custom/ai-analysis-panel';
 import type {
   AuthState,
   DerivAccount,
@@ -399,6 +400,12 @@ export function DigitsView({
                   </div>
                 </CardContent>
               </Card>
+              <AIAnalysisPanel
+                symbol={activeSymbol?.underlying_symbol ?? 'Unknown'}
+                windowSize={digitStats.totalTicks}
+                digitStats={digitStats}
+                lastDigit={lastDigit}
+              />
             </>
           )}
         </div>
